@@ -1,0 +1,37 @@
+<div fxLayout="column" fxLayoutAlign="start center" class="container">
+
+    <div (click)="toggleFastMode()" class="header">
+        {{ currentTime | date:'hh:mm:ss a' }}
+        <span *ngIf="isFastMode" class="fast-mode">⚡ Fast Mode</span>
+    </div>
+
+    <div class="reminder-list">
+        <div *ngFor="let r of formData; let i = index" class="reminder-item" [class.expired]="r.expired">
+            <span>{{ r.text }} - {{ r.time | date:'hh:mm a' }}</span>
+            <button mat-icon-button color="primary" (click)="editReminderTime(i)">
+                <mat-icon>schedule</mat-icon>
+            </button>
+        </div>
+    </div>
+
+    <form [formGroup]="reminderForm" class="formContainer" (ngSubmit)="save()">
+
+        <mat-form-field appearance="fill" class="formField">
+            <mat-label>Enter your Reminder</mat-label>
+            <input matInput placeholder="Go to gym" formControlName="reminderValue">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="formField">
+            <mat-label>Reminder Time (hh:mm)</mat-label>
+            <input matInput placeholder="6:25" formControlName="reminderTime">
+        </mat-form-field>
+
+        <div fxLayout="row" fxLayoutAlign="center center">
+            <button mat-raised-button class="submitBtn" color="primary" type="submit" [disabled]="reminderForm.invalid">
+                Add Reminder
+            </button>
+        </div>
+
+    </form>
+
+</div>

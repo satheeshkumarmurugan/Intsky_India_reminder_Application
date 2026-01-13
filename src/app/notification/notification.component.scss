@@ -1,0 +1,75 @@
+* {
+    margin: 0px 0px;
+    padding: 0px 0px;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+}
+
+.header {
+    width: 100%;
+    cursor: pointer;
+    background-color: red;
+    color: #fff;
+    padding: 20px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.fast-mode {
+    color: orange;
+    font-size: 0.9rem;
+    margin-left: 5px;
+}
+
+.reminder-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.reminder-item {
+    border: 1px solid #ccc;
+    padding: 12px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.reminder-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.expired {
+    text-decoration: line-through;
+    color: gray;
+    background-color: #f0f0f0;
+}
+
+.formContainer{
+    width:100%;
+}
+
+.formField {
+    width: 100%;
+}
+
+.icon {
+    color: green;
+}
+
+.submitBtn{
+    margin:20px 0px;
+}
